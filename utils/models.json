@@ -1,0 +1,29 @@
+{
+   "models": [
+      {
+         "name": "admin_modules",
+         "humanname": "Admin Page Modules",
+         "store": "/data/models/admin_modules.json",
+         "fields": [
+            {
+               "name": "name",
+               "auto": false,
+               "type": "str",
+               "required": true
+            },
+            {
+               "name": "module",
+               "auto": false,
+               "type": "str",
+               "required": true
+            },
+            {
+               "name": "access",
+               "auto": false,
+               "type": "str",
+               "required": true
+            }
+         ]
+      }
+   ]
+}

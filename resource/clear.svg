@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" width="48px" height="48px">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="48" height="48" style="fill:<?= $oset['theme_color'] ?>;fill-opacity:0.35;stroke:<?= $oset['theme_color'] ?>;"/>
+  </g>
+</mask>
+<image id="image34769379" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACCklEQVRoge2YP4sTQRiHn3cSTkGLLFhr7Z9CCyGQwsL2/AaCcGglYRMLwUIZRVByxRKSxkMQ5b6BXGmfCB4WnvgFbDerKKhcZixkjssluc0mbDaL+1Tvzu7C84OXeWcXCgoKCgr+Z2TWB33fPysiG9badeAccCY9rRF+Ap+Abc/ztrTWfw7fjA2gtVZhGN4TkafAiZQkZ+WjUmo9CIKvbkHFvRGG4QsR2SR7eYDLxpi3Wus1t3BsAN/3myJyO32vRFyJouiOu5gaoNlsXgSeLUUpIdbam66eGEBrXTbGvGI12mYSl1wxMcBgMLgPXF2aTnJOu2IsQKPROA88XKrOAowE0FqXrbWvgZMZ+SRmJEAOWmeMgwB5ax2Hgny2jkNBPlvHoer1+gXgUdYi86KUUprVHVixKOB61hKLEHsaXXUU8C5riUVQxhgN/M5aZF5Up9P5LCKPsxaZFwVQqVQ2rbXvs5aZBzeJ940xt4BfGfsk5mAX6na7X0TkSZYy8zCyjeaxlY5+D+SulcYGWd5aaeIkzkErfXfFtL8S+6VSaYPVHXB7rph6FgqCYA94sBSd5Gy74tjDXLvdDkRkK32fROx6nvfSXZTinu71ejvVavUbcA0op2k2A7vD4fBGq9WK3EJsAIB+v9+r1WpvrLUR/34qrQGnUpI8yg/gA/Dc87y7h+ULCgoKCgr+AnbBmh3P/Av0AAAAAElFTkSuQmCC"/>
+</defs>
+<g id="surface34754438">
+<use xlink:href="#image34754442" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:<?= $oset['theme_color'] ?>;fill-opacity:1;" d="M 31.625 32.429688 L 17.570312 18.375 C 16.800781 17.609375 16.800781 16.359375 17.570312 15.59375 L 17.59375 15.570312 C 18.359375 14.800781 19.609375 14.800781 20.375 15.570312 L 34.429688 29.625 C 35.199219 30.390625 35.199219 31.640625 34.429688 32.40625 L 34.40625 32.429688 C 33.640625 33.199219 32.390625 33.199219 31.625 32.429688 Z M 31.625 32.429688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:<?= $oset['theme_color'] ?>;fill-opacity:1;" d="M 17.570312 29.625 L 31.625 15.570312 C 32.390625 14.800781 33.640625 14.800781 34.40625 15.570312 L 34.429688 15.59375 C 35.199219 16.359375 35.199219 17.609375 34.429688 18.375 L 20.375 32.429688 C 19.609375 33.199219 18.359375 33.199219 17.59375 32.429688 L 17.570312 32.40625 C 16.800781 31.640625 16.800781 30.390625 17.570312 29.625 Z M 17.570312 29.625 "/>
+</g>
+</svg>

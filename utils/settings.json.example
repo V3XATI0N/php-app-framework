@@ -1,0 +1,21 @@
+{
+   "landing_page": "/default",
+   "app_name": "Default",
+   "app_image": "/resource/new.png",
+   "app_description": "default",
+   "app_icon": "/resource/new.png",
+   "app_url": "https://otp.tox.one",
+   "show_app_title": true,
+   "hide_login": false,
+   "require_login": false,
+   "max_idle_time": 900,
+   "vertical_layout": false,
+   "theme_color": "darkblue",
+   "access_levels": {
+      "public": 0,
+      "user": 10,
+      "moderator": 20,
+      "admin": 30,
+      "owner": 99
+   }
+}

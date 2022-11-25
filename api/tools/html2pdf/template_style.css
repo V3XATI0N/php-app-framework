@@ -1,0 +1,31 @@
+body {
+    color: black;
+    font-size: 10pt;
+    font-family: 'Fira Mono', monospace;
+}
+table {
+    font-size: 0pt;
+}
+.portal_exportDataTable {
+    width: 100%;
+    border-spacing: 0;
+}
+.portal_exportDataTable th {
+    background: #666;
+    color: white;
+    padding: 4px;
+    text-align: left;
+}
+.portal_exportDataTable td {
+    border-bottom: 1px solid #999;
+    padding: 4px;
+}
+.portal_exportDataTableTitle {
+    font-size: 14pt;
+    font-weight: normal;
+    padding: 8px;
+}
+.portal_exportKeyName {
+    display: inline-block;
+    width: 50%;
+}

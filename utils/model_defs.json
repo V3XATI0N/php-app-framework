@@ -1,0 +1,32 @@
+{
+    "models": [
+        {
+            "name": "skip_login_page",
+            "humanname": "Require Login Exceptions",
+            "store": "\/data\/models\/skip_login_page.json",
+            "source": "core",
+            "admin_manage": true,
+            "access": {
+                "GET": "moderator:user",
+                "POST": "admin:user",
+                "PATCH": "admin:user",
+                "DELETE": "admin:user",
+                "OPTIONS": "moderator:user"
+            },
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "str",
+                    "required": true,
+                    "display": "Exception Name"
+                },
+                {
+                    "name": "description",
+                    "type": "str",
+                    "textarea": true,
+                    "required": false
+                }
+            ]
+        }
+    ]
+}

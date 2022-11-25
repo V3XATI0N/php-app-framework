@@ -1,0 +1,328 @@
+{
+   "groups": {
+      "database": {
+         "name": "Database and Backend",
+         "access": "admin:admin",
+         "dark_release": false
+      },
+      "options": {
+         "name": "Application Options",
+         "access": "admin:admin"
+      },
+      "presentation": {
+         "name": "Presentation and Theme",
+         "access": "admin:admin"
+      },
+      "security": {
+         "name": "Security and Authentication",
+         "access": "admin:admin"
+      },
+      "redirects": {
+         "name": "Client Redirects",
+         "access": "admin:admin"
+      }
+   },
+   "core": {
+      "csp_header": {
+         "name": "CSP Header",
+         "description": "Content-Security-Policy header value",
+         "type": "str",
+         "default": "connect-src: https://*.browser-intake-datadoghq.com; worker-src: blob:; script-src: 'self' 'unsafe-inline' 'unsafe-eval' 'https://www.datadoghq-browser-agent.com'",
+         "group": "options"
+      },
+      "x_powered_by": {
+         "name": "X-Powered-By",
+         "description": "X-Powered-By header value (core version will be appended)",
+         "type": "str",
+         "default": "Tox Platform",
+         "group": "options"
+      },
+      "plugin_direct_fileserver": {
+         "name": "Direct Fileserver for Plugins",
+         "description": "Serve files directly from root of plugin folders. THIS IS PROBABLY UNSAFE. Plugins must use the 'serve_direct' option to work this way.",
+         "type": "bool",
+         "default": false,
+         "group": "options"
+      },
+      "upgrade_yaml_files": {
+         "name": "Upgrade YAML files",
+         "description": "When serving YAML files to clients, upgrade the data to meet best-practice YAML standards",
+         "type": "bool",
+         "default": true,
+         "group": "options"
+      },
+      "minimize_css_files": {
+         "name": "Minimize CSS files",
+         "description": "Collapse CSS files when serving them to reduce data usage (negligible effect tbh)",
+         "type": "bool",
+         "default": true,
+         "group": "options"
+      },
+      "enable_ckeditor": {
+         "name": "Enable CKEditor",
+         "description": "Enable CKEditor (v4) Support",
+         "type": "bool",
+         "default": false,
+         "group": "options"
+      },
+      "composer_path": {
+         "name": "Composer Path",
+         "description": "absolute path to PHP composer",
+         "type": "str",
+         "default": "/usr/local/bin/composer",
+         "group": "options"
+      },
+      "redirect_404": {
+         "name": "404 Redirect",
+         "description": "Redirect to this page for missing pages",
+         "type": "str",
+         "default": "/",
+         "group": "redirects"
+      },
+      "redirect_403": {
+         "name": "403 Redirect",
+         "description": "Redirect to this page for forbidden pages",
+         "type": "str",
+         "default": "/",
+         "group": "redirects"
+      },
+      "redirect_401": {
+         "name": "401 Redirect",
+         "description": "Redirect to this page for unauthorized pages",
+         "type": "str",
+         "default": "/",
+         "group": "redirects"
+      },
+      "disable_composer": {
+         "name": "Disable Composer Automation",
+         "description": "DISABLE composer automation (some functions will not work)",
+         "type": "bool",
+         "default": false,
+         "group": "options"
+      },
+      "sql_host": {
+         "name": "MySQL/MariaDB Host",
+         "description": "Database server address",
+         "type": "str",
+         "default": "hostname",
+         "group": "database"
+      },
+      "sql_port": {
+         "name": "MySQL/MariaDB Port",
+         "description": "Database port",
+         "type": "int",
+         "default": 3306,
+         "group": "database"
+      },
+      "sql_user": {
+         "name": "MySQL/MariaDB Username",
+         "description": "Database login username",
+         "type": "str",
+         "default": "username",
+         "group": "database"
+      },
+      "sql_pass": {
+         "name": "MySQL/MariaDB Password",
+         "description": "Database login password",
+         "type": "password",
+         "default": "password",
+         "group": "database"
+      },
+      "sql_name": {
+         "name": "MySQL/MariaDB Schema",
+         "description": "Database schema name",
+         "type": "str",
+         "default": "database",
+         "group": "database"
+      },
+      "sql_backend": {
+         "name": "Store Users and Groups in Database",
+         "description": "Store user and group data in the database instead of in users.json file.",
+         "type": "bool",
+         "default": false,
+         "group": "database"
+      },
+      "user_themes": {
+         "name": "Allow User Themes",
+         "description": "Users can customize theme/layout for themselves.",
+         "type": "bool",
+         "default": true,
+         "group": "presentation"
+      },
+      "show_nav_text": {
+         "name": "Show Nav Item Text",
+         "description": "Show text labels on main Nav Menu items. Plugins can force this for their items.",
+         "type": "bool",
+         "default": true,
+         "group": "presentation"
+      },
+      "landing_page": {
+         "name": "Landing Page",
+         "description": "The default landing page",
+         "type": "str",
+         "group": "redirects"
+      },
+      "dark_theme": {
+         "name": "Dark Theme",
+         "description": "Use a dark variant of the theme.",
+         "type": "bool",
+         "default": false,
+         "group": "presentation"
+      },
+      "vertical_layout": {
+         "name": "Vertical Layout",
+         "description": "Use vertical nav bar layout. Only applies to desktop web view.",
+         "type": "bool",
+         "group": "presentation"
+      },
+      "show_app_title": {
+         "name": "Show App Title",
+         "description": "Show application name in header",
+         "type": "bool",
+         "group": "presentation"
+      },
+      "theme_color": {
+         "name": "Theme Color",
+         "description": "Base theme color. All theme colors are calculated from this base.",
+         "type": "color",
+         "group": "presentation"
+      },
+      "app_name": {
+         "name": "Application Name",
+         "description": "User-friendly application name",
+         "type": "str",
+         "group": "presentation"
+      },
+      "app_description": {
+         "name": "Preview Description",
+         "description": "Description as shown in link previews",
+         "type": "str",
+         "group": "presentation"
+      },
+      "app_image": {
+         "name": "Logo Image",
+         "description": "Image to use for link previews and logo",
+         "type": "str",
+         "group": "presentation",
+         "default": "/resource/new.png"
+      },
+      "app_icon": {
+         "name": "Favicon image",
+         "description": "Icon in browser tabs and favorites",
+         "type": "str",
+         "group": "presentation"
+      },
+      "app_url": {
+         "name": "Application URL",
+         "description": "URL to website",
+         "type": "str",
+         "group": "options"
+      },
+      "hide_login": {
+         "name": "Hide Login Link",
+         "description": "Hide link to login page in nav menu",
+         "type": "bool",
+         "default": false,
+         "group": "options"
+      },
+      "audit_log": {
+         "name": "Audit Log",
+         "description": "Log some things sometimes, idk",
+         "type": "bool",
+         "default": true,
+         "group": "options"
+      },
+      "log_level": {
+         "name": "Logging Level",
+         "description": "how much you want the log to show (lower is more)",
+         "type": "int",
+         "default": 3,
+         "group": "options"
+      },
+      "audit_log_file": {
+         "name": "Audit log filename",
+         "description": "where to save the audit log",
+         "type": "str",
+         "default": "__app_root__/data/audit_log.json",
+         "group": "options"
+      },
+      "custom_login_page": {
+         "name": "Customized Login Page",
+         "description": "Obfuscate the /login page with this custom name",
+         "type": "str",
+         "default": "login",
+         "group": "redirects"
+      },
+      "require_login": {
+         "name": "Requre Login",
+         "description": "Require all visitors to log in",
+         "type": "bool",
+         "default": false,
+         "group": "security"
+      },
+      "allow_plugin_auth": {
+         "name": "Allow Plugin Authentication", 
+         "description": "Allow plugins to authenticate users",
+         "default": false,
+         "type": "bool",
+         "group": "security"
+      },
+      "max_idle_time": {
+         "name": "Idle Session Timeout",
+         "description": "Maximum time in seconds for users to remain logged in while idle",
+         "default": 900,
+         "type": "int",
+         "group": "security"
+      },
+      "max_login_attempts": {
+         "name": "Maximum Login Attempts",
+         "description": "Number of failed login attempts before username is locked out",
+         "type": "int",
+         "default": 4,
+         "group": "security"
+      },
+      "login_lock_time": {
+         "name": "Failed Login Lock Time",
+         "description": "How long (in seconds) to lock an account for failed login attempts",
+         "type": "int",
+         "default": 600,
+         "group": "security"
+      },
+      "emails_are_usernames": {
+         "name": "Email addresses work as login usernames",
+         "description": "Users can login using their email addresses as their usernames",
+         "type": "bool",
+         "default": false,
+         "group": "security"
+      },
+      "access_levels": {
+         "name": "Access Levels",
+         "description": "Ranked access levels",
+         "type": "list",
+         "group": "security",
+         "hide": true
+      },
+      "admin_page_modules": {
+         "name": "Admin Page Modules",
+         "description": "Modules Visible on Admin Page",
+         "type": "list",
+         "group": "security",
+         "hide": true
+      },
+      "disable_iframe_embedding": {
+         "name": "Disable IFRAME embedding",
+         "description": "Prevent the application from being embedded in an IFRAME tag",
+         "type": "bool",
+         "group": "security",
+         "default": false
+      }
+   },
+   "list_schema": {
+      "access_levels": {
+         "name": "int"
+      },
+      "admin_page_modules": {
+         "name": "str"
+      }
+   }
+}

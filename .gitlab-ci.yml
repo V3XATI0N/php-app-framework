@@ -1,0 +1,13 @@
+deploy_prod:
+  stage: deploy
+  image: alpine
+  only:
+    - master
+  before_script:
+    - apk add openssh-client
+    - eval $( ssh-agent -s )
+    - echo "$SALT_MASTER_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ssh -o StrictHostKeyChecking=no -p 225 root@salt.tox.one "salt -C 'G@v5console_host:true' state.apply salt_console.v5update"

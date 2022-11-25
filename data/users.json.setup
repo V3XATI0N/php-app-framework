@@ -1,0 +1,39 @@
+{
+    "users": {
+        "admin": {
+            "fullname": "Default Admin",
+            "email": "admin@great.place",
+            "password": "$2y$10$wU4A1nIWkzxrX/Reg0abZeAX/lbFKanrGRIsDGamc6h5Cf.tmd2qS",
+            "rank": "owner",
+            "id": "admin001",
+            "group": "DEFAULT",
+            "theme": {
+                "local_dark_theme": false,
+                "vertical_layout": true,
+                "show_nav_text": true,
+                "theme_color": "#1972b5",
+                "dark_theme": false,
+                "show_app_title": false
+            },
+            "username": "maxpango",
+            "api_key": "poopydoopy"
+        }
+    },
+    "groups": {
+        "default": {
+            "id": "DEFAULT",
+            "rank": "owner",
+            "users": [
+                "admin001"
+            ],
+            "salt_default_api_group": false
+        },
+        "API Users": {
+            "id": "bBorsF6QIY",
+            "rank": "user",
+            "users": [],
+            "salt_default_api_group": true,
+            "url": "www.nothing-at-all.com"
+        }
+    }
+}

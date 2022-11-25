@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpmailer\/phpmailer": "^6.2",
+        "mpdf\/mpdf": "^8.0",
+        "halaxa\/json-machine": "^0.5.0"
+    }
+}

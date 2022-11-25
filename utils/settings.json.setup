@@ -1,0 +1,35 @@
+{
+    "landing_page": "\/default",
+    "app_name": "DEVELOPMENT IS LAME",
+    "app_image": "\/resource\/new.png",
+    "app_description": "tox 5 alpha",
+    "app_icon": "\/resource\/new.png",
+    "app_url": "https:\/\/fancy.url",
+    "show_app_title": false,
+    "hide_login": false,
+    "require_login": true,
+    "max_idle_time": 86400,
+    "vertical_layout": true,
+    "theme_color": "#2772da",
+    "access_levels": {
+        "public": 0,
+        "user": 10,
+        "moderator": 20,
+        "admin": 30,
+        "owner": 99
+    },
+    "allow_plugin_auth": true,
+    "admin_page_modules": {
+        "settings": "System Settings",
+        "users": "User Accounts",
+        "groups": "User Groups",
+        "models": "Object Models",
+        "plugins": "Plugins",
+        "update": "System Updates"
+    },
+    "show_nav_text": true,
+    "dark_theme": false,
+    "user_themes": true,
+    "enable_ckeditor": true,
+    "login_lock_time": 900
+}

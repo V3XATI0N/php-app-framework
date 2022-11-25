@@ -1,0 +1,217 @@
+{
+   "version": "4.99.82",
+   "codename": "tox5 alpha",
+   "changelog": {
+      "4.99.82": [
+         "[fix] Composer automation fixes/improvements",
+         "[new] Very early groundwork for MFA"
+      ],
+      "4.99.81": [
+         "[change] CKEditor updated to 4.19.0",
+         "[new] Object models can now specify CKEditor options directly in the definitions for fields that use CKEditor inputs"
+      ],
+      "4.99.80": [
+         "[new] add CurlRequest() class and toxCurl() wrapper function"
+      ],
+      "4.99.79": [
+         "[new] control Content-Security-Policy and X-Powered-By headers from system settings"
+      ],
+      "4.99.78": [
+         "[new] support saving user/group data in a database (this REQUIRES plugin changes!)"
+      ],
+      "4.99.77": [
+         "[change] improve model system performance by using datases correctly (revolutionary!)",
+         "[fix] model tables not created sometimes",
+         "[fix] forgot to make id columns unique whoops lol"
+      ],
+      "4.99.76": [
+         "[fix] model field transform on read/write",
+         "[new] support custom functions for model auto_type fields",
+         "[change] treat empty values as valid false boolean values (this is probably a mistake)"
+      ],
+      "4.99.75": [
+         "[change] skip version number because docker or something"
+      ],
+      "4.99.74": [
+         "[new] more consistent logging",
+         "[new] configurable log levels"
+      ],
+      "4.99.73": [
+         "[new] upgrade_yaml_files flag",
+         "[fix] clean up a couple meaningless bits in functions",
+         "[new] add dark_release flag for system settings groups",
+         "[change] reorganize system settings a bit"
+      ],
+      "4.99.72": [
+         "[new] access rules for DFM plugin resources"
+      ],
+      "4.99.71": [
+         "[new] direct fileserver mode for plugins"
+      ],
+      "4.99.70": [
+         "[new] add optional flag to allow emails as usernames",
+         "[change] require emails to be unique among users",
+         "[new] settings change validation ability"
+      ],
+      "4.99.64": [
+         "[new] add (undocumented) skip_login_pages option",
+         "[new] various CSS tweaks",
+         "[new] custom login page fixes"
+      ],
+      "4.99.63": [
+         "[change] expanded functionality for plugin-based user profile settings",
+         "[change] changed layout of plugin-based user profile settings",
+         "[change] added DELETE, PATCH, POST, and SETUP profile methods"
+      ],
+      "4.99.62": [
+         "[fix] unauthenticated users could list all object models (bad!)",
+         "[fix] data type validation was broken for bool values",
+         "[fix] example model items lacked a label in the list"
+      ],
+      "4.99.61": [
+         "[new] login page obfuscation",
+         ""
+      ],
+      "4.99.60": [
+         "[new] file_from_url model field type",
+         "[new] VERY initial work on event bus"
+      ],
+      "4.99.57": [
+         "[new] add in_array_tox() for reasons",
+         "[new] add fieldMatch url argument for model searches"
+      ],
+      "4.99.56": [
+         "[fix] multi model field type fails validation",
+         "[new] use models for multi field type option source"
+      ],
+      "4.99.55": [
+         "[fix] model file inputs not updated on patch request",
+         "[new] models support rich text inputs",
+         "[change] some more sloppy file validation that won't help"
+      ],
+      "4.99.54": [
+         "[new] support for object models with file input types",
+         "[change] extend timeout check interval to 15 seconds",
+         "[initial] blanket type validation for file inputs, this is sloppy"
+      ],
+      "4.99.53": [
+         "[new] allow plugin manifest to be written in YAML (plugin.yaml)"
+      ],
+      "4.99.52": [
+         "[change] model_controllers moved to plugin /utils folder"
+      ],
+      "4.99.51": [
+         "[new] allow plugin models to be defined in either JSON or YAML"
+      ],
+      "4.99.50": [
+         "[new] add 'controller' model type"
+      ],
+      "4.99.41": [
+         "[initial] manage object models via admin API",
+         "support CKEditor inputs in object model fields"
+      ],
+      "4.99.40": [
+         "more informative plugin admin page"
+      ],
+      "4.99.39": [
+         "models can declare transformation functions"
+      ],
+      "4.99.38": [
+         "model system creates missing db columns",
+         "model system creates missing db tables"
+      ],
+      "4.99.37": [
+         "add database storage for model objects",
+         "add option_src parameter to model select/option fields"
+      ],
+      "4.99.36": [
+         "fix versions page layout bug",
+         "minor ObjectModelList js class improvement"
+      ],
+      "4.99.35": [
+         "user profile page is a little cleaner",
+         "fix bug related to plugin-defined user accounts",
+         "doc update",
+         "add the PageInfoBox js class just because"
+      ],
+      "4.99.34": [
+         "overhaul Composer handling to make life easier (but it will probably break everything)"
+      ],
+      "4.99.33": [
+         "allow direct output from plugin pages",
+         "updated Composer packages",
+         "CSS fixes for mobile layout",
+         "Full model management from Admin page"
+      ],
+      "4.99.32": [
+         "generate CSS vars for plugin styles automatically"
+      ],
+      "4.99.31": [
+         "allow plugins to control meta tags",
+         "initial preload page setup support for plugins",
+         "improved page title generation"
+      ],
+      "4.99.30": [
+         "speed up CSS rendering",
+         "better SVG support",
+         "more flex containers because flex is cool and good",
+         "fixes for plugin authentication"
+      ],
+      "4.99.29": [
+         "minimize all CSS",
+         "error log updates",
+         "more control of actionTrigger elements"
+      ],
+      "4.99.28": [
+         "css updates",
+         "new FormInputList class"
+      ],
+      "4.99.27": [
+         "stop with the pagination on the audit log, who cares"
+      ],
+      "4.99.26": [
+         "Add admin page object model edit support",
+         "Better access control for admin API modules",
+         "Better error handling for invalid access control config"
+      ],
+      "4.99.25": [
+         "Initial API Key authentication support",
+         "Support file field types",
+         "Support file uploads to Model objects",
+         "Fix index redirect issue"
+      ],
+      "4.99.20": [
+         "Store plugin settings in separate file",
+         "Add CKEditor, PHPMailer, and mPDF just because",
+         "Audit Log"
+      ],
+      "4.99.11": [
+         "users can only be in one group because i am dumdum",
+         "rewrite the whole user/group management front-end",
+         "add personal account management back-end"
+      ],
+      "4.99.10": [
+         "move admin modules to object system (core and plugins)",
+         "user theme control",
+         "dark mode"
+      ],
+      "4.99.5": [
+         "CSS tweaks",
+         "little more consistency on admin modules",
+         "initial object model admin support"
+      ],
+      "4.99.4": [
+         "add allow_plugin_auth setting"
+      ],
+      "4.99.3": [
+         "fix require_login bugs",
+         "minor theme updates"
+      ],
+      "4.99.2": [
+         "use json instead of yaml because it's the future"
+      ],
+      "4.99.1": [
+         "complete rewrite"
+      ]
+   }
+}

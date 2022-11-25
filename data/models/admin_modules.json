@@ -1,0 +1,44 @@
+[
+    {
+        "id": "ss01",
+        "name": "System Settings",
+        "module": "settings",
+        "access": "admin:admin"
+    },
+    {
+        "id": "ss02",
+        "name": "User Accounts",
+        "module": "users",
+        "access": "admin:moderator"
+    },
+    {
+        "id": "ss03",
+        "name": "User Groups",
+        "module": "groups",
+        "access": "admin:moderator"
+    },
+    {
+        "id": "ss04",
+        "name": "Object Models",
+        "module": "models",
+        "access": "admin:owner"
+    },
+    {
+        "id": "ss05",
+        "name": "Plugins",
+        "module": "plugins",
+        "access": "admin:owner"
+    },
+    {
+        "id": "ssaudit",
+        "name": "Audit Log",
+        "module": "audit_log",
+        "access": "admin:moderator"
+    },
+    {
+        "id": "ss06",
+        "name": "System Updates",
+        "module": "update",
+        "access": "admin:owner"
+    }
+]

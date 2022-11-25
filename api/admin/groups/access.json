@@ -1,0 +1,10 @@
+{
+    "methods": {
+        "GET": "moderator:user",
+        "IMPORT": "admin:admin",
+        "DELETE": "admin:user",
+        "POST": "moderator:admin",
+        "OPTIONS": "user:user",
+        "PATCH": "moderator:admin"
+    }
+}

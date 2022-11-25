@@ -1,0 +1,75 @@
+{
+    "user": {
+        "fields": [
+            {
+                "display": "Full Name",
+                "name": "fullname",
+                "type": "str",
+                "required": true,
+                "autocapitalize": "words"
+            },
+            {
+                "display": "Email Address",
+                "name": "email",
+                "validate": "email",
+                "type": "str",
+                "required": true,
+                "unique": true
+            },
+            {
+                "display": "Access Level",
+                "name": "rank",
+                "user_edit": false,
+                "type": "option",
+                "source": "api.admin.settings.core.access_levels"
+            },
+            {
+                "display": "id",
+                "user_edit": false,
+                "name": "id",
+                "type": "str",
+                "auto": true
+            },
+            {
+                "display": "Login Password",
+                "name": "password",
+                "type": "str",
+                "hash": true,
+                "required": true
+            },
+            {
+                "display": "Group",
+                "user_edit": false,
+                "name": "group",
+                "type": "option",
+                "source": "api.admin.groups",
+                "id_field": "id"
+            }
+        ]
+    },
+    "group": {
+        "fields": [
+            {
+                "display": "id",
+                "name": "id",
+                "type": "str",
+                "auto": true
+            },
+            {
+                "display": "Access Level",
+                "name": "rank",
+                "type": "option",
+                "source": "api.admin.settings.core.access_levels"
+            },
+            {
+                "display": "Group Members",
+                "name": "users",
+                "type": "multi",
+                "source": "api.admin.users",
+                "id_field": "id",
+                "name_field": "__key__",
+                "match_field": "group"
+            }
+        ]
+    }
+}
