@@ -6,9 +6,10 @@ utils/settings.json
 
 utils/user_actions.json
 
+!plugins/
+!plugins/core_account/
 plugins/*
-!plugins/README.md
-!plugins/FUNCTION_INDEX.md
+!plugins/*.md
 
 data/users.json
 
