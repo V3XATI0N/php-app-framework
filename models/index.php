@@ -13,6 +13,9 @@ if (!isset($_SESSION['id'])) {
             apiDie($auth, 403);
         }
     } elseif (isset($_SERVER['PHP_AUTH_USER']) and isset($_SERVER['PHP_AUTH_PW'])) {
+        if (isset($oset['disable_api_basic_auth']) and $oset['disable_api_basic_auth'] === true) {
+            apiDie('no.', 401);
+        }
         $user = $_SERVER['PHP_AUTH_USER'];
         $pass = $_SERVER['PHP_AUTH_PW'];
         $auth = verifyLogin($user, $pass);

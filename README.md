@@ -102,19 +102,30 @@ Once the method is determined, the Access Control String is applied to an action
 
 A user's effective access level is a combination of these two values. To perform an action limited to an `admin:moderator` level, the user must belong to a group with an access level of `admin` or higher; then the user must themselves have an access level of `moderator` or higher. Group levels grant access to everything with a lower value, even if a user's individual level does not meet the user level defined by an action; group levels also *deny* access to everything with a higher value, so a user cannot perform any action limited to a higher group level, no matter what their own individual level is.
 
-Access levels are just a number between 0 and 99, with names assigned to make it easier to keep track of them. The standard levels are:
+An "Access Level" is just a number between 0 and 99, with a name assigned to make it easier to keep track of it. The standard levels are:
 
 * public: level 0
-* user: level 10
-* moderator: level 20
-* admin: level 30
+* user: level 25
+* moderator: level 50
+* admin: level 75
 * owner: level 99
+
+If you really need to change these numbers for some reason, you can do that by editing the `access_levels` object in `settings.json`. The values defined there aren't hardcoded anywhere, so you should be fine.
 
 Everyone, including unauthenticated users, have access to any object or action with a `public:public` access string. When a user is authenticated, they will have access to any action with a group access level  below their own group's access level regardless of their own user access level, and any action with a group access level equal to their own group's level and a user level equal to or below their own user level.
 
 ### Plugin Access Level Extensions
 
-Plugins can define additional access levels with their own numeric values to provide more granular access control.
+Plugins can define additional access levels with their own numeric values to provide more granular access control. This is done by adding an `access_levels` object in the plugin's `plugin.json` file with numerical values between the standard levels. For example:
+
+```json
+...
+"access_levels": {
+    "super_moderator": 55,
+    "super_admin": 80
+}
+...
+```
 
 ## Object Model System
 
@@ -288,6 +299,18 @@ As elsewhere in the app, plugins are additive. This means more than one plugin c
 ### DEFINING OBJECTS THAT BELONG TO SOMEONE ELSE'S MODEL
 
 A plugin can define additional objects of a type defined by Core or by another plugin. To do this, add another item to the `models.json` file called `append`. This is a list of sub-objects consisting of a `model` field naming the type of objects you're defining and a `store` naming a path (relative to the plugin's root folder) to a JSON or YAML file containing the objects. This is how you add pages to the Admin page menu, since admin pages are defined by the `admin_modules` model.
+
+### MANAGING OBJECT MODEL TYPES
+
+You can also use the API to perform CRUD operations on the model definitions with `GET`, `PATCH`, `POST`, and `DELETE` methods on the `/api/admin/models` endpoint. Just be mindful of the fact that you can mess up existing data objects if you're not careful:
+
+* Changing a model's storage location won't automatically migrate existing objects.
+* Adding/removing required fields might cause existing objects to be out of spec.
+* Changing field types can cause existing objects to display weird field values.
+
+Also the `/api/admin/models` endpoint only works at the whole-model level (for example, you can't make requests to `/api/admin/models/cool_model/field_name` or something).
+
+Any models created using this API endpoint will behave as if they were defined by Core (you're actually editing `/utils/model_defs.json` with this endpoint).
 
 ### ACCESSING MODELS
 
