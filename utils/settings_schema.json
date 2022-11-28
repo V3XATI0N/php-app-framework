@@ -315,6 +315,13 @@
          "type": "bool",
          "group": "security",
          "default": false
+      },
+      "disable_api_basic_auth": {
+         "name": "Disable basic auth for the REST API",
+         "description": "If this option is checked, then the REST API will not allow HTTP basic authentication.",
+         "type": "bool",
+         "group": "security",
+         "default": false
       }
    },
    "list_schema": {
