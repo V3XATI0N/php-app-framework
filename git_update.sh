@@ -11,6 +11,8 @@ while getopts "u:g:" OPT; do
         "g")
             GROUP="$OPTARG"
             ;;
+        *)
+            exit 1
     esac
 done
 
@@ -21,18 +23,16 @@ git stash apply
 
 # plugins
 
-cd plugins
-for CHK in $( ls ./ ); do
+cd plugins || exit 1
+for CHK in *; do
     echo "checking ${CHK} ..."
     if [ -d "$CHK" ]; then
-        cd "$CHK"
+        cd "$CHK" || exit 1
         if [ -d ".git" ]; then
             echo -n "updating ${CHK} ... "
-            git stash > /dev/null 2>&1
-            if [ $? -gt 0 ]; then echo "stash failed"; fi
-            git pull > /dev/null 2>&1
-            if [ $? -gt 0 ]; then echo "update failed"; fi
-            git stash apply > /dev/null 2>&1
+            if ! git stash > /dev/null 2>&1; then echo "stash failed"; fi
+            if ! git pull > /dev/null 2>&1; then echo "update failed"; fi
+            if ! git stash apply > /dev/null 2>&1; then echo "stash restore failed"; fi
             echo "ok"
         else
             echo "${CHK} is not a repository"
@@ -44,5 +44,5 @@ for CHK in $( ls ./ ); do
 done
 cd ..
 
-sudo chown -R ${USER}:${GROUP} ./
+sudo chown -R "${USER}:${GROUP}" ./
 sudo chmod -R g+rwX ./
