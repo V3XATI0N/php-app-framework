@@ -85,22 +85,21 @@ if [[ ! -f "utils/settings.json.setup" ]]; then
     exit 1
 fi
 
-cp -o utils/settings.json.setup utils/settings.json
-cp -o utils/composer_base.json composer/composer.json
+cp utils/settings.json.setup utils/settings.json
+cp data/users.json.setup data/users.json
+cp utils/composer_base.json composer/composer.json
 
 if [[ ! -f $COMPOSER_PATH ]]; then
-    cd ./composer || exit 1
     echo "installing composer..."
+    cd ./composer || exit 1
     COMPINST=$( setup_composer )
     if [[ "$COMPINST" -gt 0 ]]; then
         echo "composer didn't install, i give up."
         exit 1
-    else
-        echo "installing dependencies ..."
-        /usr/local/bin/composer update >> /var/log/tox_composer_update.log 2>&1
-    fi
     cd ..
 fi
+
+if [[ ! -d composer/vendor ]]; then echo "installing composer dependendencies..."; cd composer; ${COMPOSER_PATH} update; cd ..; fi
 
 chown -R "${PHP_USER}:${PHP_GROUP}" ./
 chmod -R +rwX ./
@@ -112,8 +111,10 @@ EOF
 
 chmod +x run_update.sh
 
-echo "setup complete. configure your webserver yourself."
-echo "to update later, execute run_update.sh"
-echo "log in initially with admin / password"
+cat << EOF
+    setup complete. configure your webserver yourself.
+    to update later, execute run_update.sh
+    log in initially with admin / password
+EOF
 
 exit 0
