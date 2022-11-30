@@ -1,0 +1,31 @@
+{
+    "name": "Core Account Settings",
+    "description": "User self-service account options",
+    "maintainer": "tox core plugins",
+    "version": "1.0",
+    "depends": {
+        "core": "4.99.60"
+    },
+    "logo_image": "/resource/plugins/core_account/assets/wrench.png",
+    "enabled": true,
+    "scripts": [
+        {
+            "source": "/resource/core_account.js",
+            "access": "user:user"
+        }
+    ],
+    "styles": [
+        {
+            "source": "/resource/core_account.css",
+            "access": "public:public"
+        }
+    ],
+    "account_settings_modules": [
+        {
+            "access": "moderator:user",
+            "href": "core_account_api_keys",
+            "name": "API Keys",
+            "icon": "api_keys.png"
+        }
+    ]
+}

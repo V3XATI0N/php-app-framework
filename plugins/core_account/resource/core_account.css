@@ -1,0 +1,29 @@
+.core_account_item_command:hover {
+    cursor: pointer;
+    border: 1px solid red;
+}
+.core_account_info {
+    margin: 8px;
+    padding: 4px;
+    border: 1px solid var(--themeDarker);
+    border-radius: 5px;
+}
+.core_account_info .pageSubHeader {
+    font-size: 12pt;
+}
+.core_account_info_text {
+    font-size: 10pt;
+    padding: 4px;
+    margin: 4px;
+}
+.core_account_data_pre {
+    white-space: pre-wrap;
+    word-wrap: anywhere;
+    word-break: break-all;
+    user-select: text;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    color: black;
+    padding: 4px;
+    margin: 4px;
+}
