@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# this script makes a lot of assumptions (deal with it lol):
+#   - you are using Debian or a Debian-based distro
+#   - you are using nginx and php-fpm
+#
+# this script will install packages and attempt to
+# automatically configure both NGINX and PHP. You can
+# see detailed usage instructions by running with the -h
+# flag (or just looking at show_help() below)
+
 COMPOSER_PATH="/usr/local/bin/composer"
 PHP_USER="www-data"
 PHP_GROUP="www-data"
@@ -207,8 +216,7 @@ else
 fi
 
 cat << EOF
-    app setup complete
-    to update later, execute run_update.sh
+    app setup complete (we hope)
     log in initially with admin / password
 EOF
 
