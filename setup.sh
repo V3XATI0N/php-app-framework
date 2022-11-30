@@ -91,8 +91,8 @@ cp -o utils/composer_base.json composer/composer.json
 if [[ ! -f $COMPOSER_PATH ]]; then
     cd ./composer || exit 1
     echo "installing composer..."
-    COMPINST=$( composer_setup )
-    if [ "$COMPINST" -gt 0 ]; then
+    COMPINST=$( setup_composer )
+    if [[ "$COMPINST" -gt 0 ]]; then
         echo "composer didn't install, i give up."
         exit 1
     else
