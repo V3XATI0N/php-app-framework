@@ -842,6 +842,22 @@ class ModelEditForm {
                                 eInput.append(optItem);
                             });
                         });
+                    } else if (typeof field.model_src != "undefined") {
+                        $.ajax({
+                            url: '/models/' + field.model_src + '?fields=name,id',
+                            type: 'GET',
+                            headers: {
+                                'accept': 'application/json'
+                            }
+                        }).done(opts => {
+                            $.each(opts, function(i, optData) {
+                                var optItem = $('<option>', {value: optData.id, text: optData.name});
+                                if (optData.id == item[field.name]) {
+                                    optItem.attr('selected', 'selected');
+                                }
+                                eInput.append(optItem);
+                            });
+                        });
                     } else {
                         $.each(field.options, function(optName, optVal) {
                             var optItem = $('<option>', {
