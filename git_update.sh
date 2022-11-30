@@ -7,10 +7,6 @@
 # change, but you may get into a situation where your changes conflict with
 # updates (making changes to plugin.json files is almost guaranteed to cause
 # this to happen).
-#
-# Usage:
-# 1. set the variables below to something that actually works in your environment,
-# 2. use the -P <plugin_name> flag
 
 CONSOLE_NAME="{{ console_name }}"
 CONSOLE_PATH="$( pwd )"
