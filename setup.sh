@@ -96,7 +96,6 @@ if [[ ! -f $COMPOSER_PATH ]]; then
     if [[ "$COMPINST" -gt 0 ]]; then
         echo "composer didn't install, i give up."
         exit 1
-    fi
     cd ..
 fi
 
