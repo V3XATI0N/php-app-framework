@@ -1,7 +1,12 @@
 {
-   "version": "4.99.82",
+   "version": "4.99.83",
    "codename": "tox5 alpha",
    "changelog": {
+      "4.99.83": [
+         "[new] Support directly using models as source for select/option fields in other models",
+         "[change] fix setup.sh and git_update.sh so they actually do useful stuff sort of",
+         "[new] system option for disabling basic auth in the API"
+      ],
       "4.99.82": [
          "[fix] Composer automation fixes/improvements",
          "[new] Very early groundwork for MFA"

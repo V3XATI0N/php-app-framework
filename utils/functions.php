@@ -3,6 +3,18 @@
 // functions
 
 function logEvent($data = null, $logLevel = 3) {
+    /*
+    logging needs attention. right now every time any event is
+    logged, the app parses the entire log file as a JSON object, adds the new
+    event to the array, and then saves the file. as you can guess, this means
+    that everything gets incredibly slow the larger the log file gets. this is
+    just bad design, tbh.
+
+    it won't take much to fix, just open the file in append mode
+    instead and yeet the new event to the end. this will only affect the
+    log viewer on the admin page, which is garbage anyway, nothing else
+    depends on this terrible design.
+    */
     global $oset;
     global $api_path;
     global $api_method;
@@ -926,6 +938,15 @@ function verifyLogin($user, $pass) {
         $groupRankName = "public";
         clearUserLoginLock($user);
         if (isset($user_legacy_password) and $user_legacy_password === true) {
+            /*
+            this app was written from scratch to replace an even worse one,
+            which used a different mechanism for encrypting user passwords.
+            we needed a way to respect those existing passwords without
+            resetting them, so this function detects such passwords, logs
+            a warning about it, and then re-encrypts the password using
+            the password_hash(). this check doesn't need to exist at all
+            anymore, actually.
+            */
             logEvent(["LEGACY PASSWORD LOGIN!", $userdata['username']], 3);
             reCryptUserPassword($userdata['id'], $pass);
         }
