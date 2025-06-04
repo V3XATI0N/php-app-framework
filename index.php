@@ -266,7 +266,7 @@ if (!empty($api_path[1])) {
             } elseif (isset($oset['plugin_direct_fileserver']) and $oset['plugin_direct_fileserver'] === true and isset($pluginConf['serve_direct']) and $pluginConf['serve_direct'] === true) {
                 $ruri = $_SERVER['REQUEST_URI'];
                 if (isset($pluginConf['direct_fileserver_options'])) {
-                    $dfmo = $pluginconf['direct_fileserver_options'];
+                    $dfmo = $pluginConf['direct_fileserver_options'];
                 } else {
                     $dfmo = null;
                 }
@@ -419,7 +419,7 @@ if (!empty($api_path[1])) {
                         case "html":
                             apiDie(file_get_contents($rfile), 200, "text/html");
                         case "css":
-                            if ($dfmo !== null and isset($dfmo['eval_css']) and $fmo['eval_css'] === true) {
+                            if ($dfmo !== null and isset($dfmo['eval_css']) and $dfmo['eval_css'] === true) {
                                 ob_start();
                                 include($rfile);
                                 $fc = ob_get_clean();
@@ -440,7 +440,7 @@ if (!empty($api_path[1])) {
                             } else {
                                 $fc = file_get_contents($rfile);
                             }
-                            apiDie($dc, 200, "application/javascript");
+                            apiDie($fc, 200, "application/javascript");
                         case "php":
                             include($rfile);
                             die();
