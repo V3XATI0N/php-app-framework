@@ -9,6 +9,8 @@ utils/user_actions.json
 !plugins/
 !plugins/core_account/
 plugins/*
+!plugins/comic_site/
+!plugins/comic_site/**
 !plugins/*.md
 
 data/users.json

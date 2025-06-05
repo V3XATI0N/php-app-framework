@@ -1,0 +1,21 @@
+{
+  "models": [
+    {
+      "name": "comic",
+      "humanname": "Comic",
+      "store": "/models/comics.json",
+      "access": {
+        "GET": "public:public",
+        "POST": "admin:moderator",
+        "PATCH": "admin:moderator",
+        "DELETE": "admin:moderator"
+      },
+      "fields": [
+        {"name": "title", "display": "Title", "type": "str", "required": true, "label": true},
+        {"name": "image", "display": "Image", "type": "file", "store": "/assets/comics", "required": true, "disposition": "inline"},
+        {"name": "alt_text", "display": "Alt Text", "type": "str"},
+        {"name": "pub_date", "display": "Date", "type": "str"}
+      ]
+    }
+  ]
+}

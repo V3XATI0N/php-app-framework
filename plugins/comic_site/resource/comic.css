@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+}
+.comic-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+}
+.comic-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+.comic-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.dark body {
+    background: #111;
+    color: #eee;
+}
+.dark a { color: #8ab4f8; }

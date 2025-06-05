@@ -1,0 +1,20 @@
+{
+    "name": "Webcomic Site",
+    "description": "Serve a simple webcomic using object models",
+    "version": "1.0",
+    "maintainer": "example",
+    "depends": {"core": "4.99.83"},
+    "logo_image": "/resource/webcomic.png",
+    "enabled": true,
+    "styles": [
+        {"source": "/resource/comic.css", "access": "public:public"}
+    ],
+    "nav_menu": {
+        "Comic": {
+            "href": "comic",
+            "access": "public:public",
+            "menu_id": "comic_home",
+            "icon": "/resource/comic_icon.png"
+        }
+    }
+}

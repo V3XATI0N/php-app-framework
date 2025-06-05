@@ -1,0 +1,9 @@
+[
+  {
+    "id": "sample",
+    "title": "Sample Comic",
+    "image": "/resource/plugins/comic_site/assets/comics/sample.png:/workspace/php-app-framework/plugins/comic_site/resource/assets/comics/sample.png:image/png",
+    "alt_text": "placeholder",
+    "pub_date": "2023-01-01"
+  }
+]
