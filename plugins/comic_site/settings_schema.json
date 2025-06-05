@@ -1,0 +1,22 @@
+{
+  "groups": {
+    "comic": {
+      "name": "Comic Site",
+      "access": "admin:moderator"
+    }
+  },
+  "core": {
+    "comic_site_title": {
+      "name": "Comic Site Title",
+      "description": "Title shown on comic pages",
+      "type": "str",
+      "default": "My Webcomic",
+      "group": "comic"
+    },
+    "comic_site_tagline": {
+      "name": "Site Tagline",
+      "type": "str",
+      "group": "comic"
+    }
+  }
+}
